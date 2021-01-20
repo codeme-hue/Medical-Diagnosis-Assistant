@@ -1,3 +1,3 @@
 # Medical-Diagnosis-Assistant
--With AI RASA NLU
--Try implement to mobile flutter inspired by Sharma999
+- With AI RASA NLU
+- Try implement to mobile flutter inspired by AbySharma999
