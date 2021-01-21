@@ -1,0 +1,107 @@
+version: '2.0'
+config:
+  store_entities_as_slots: true
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+  - pembukaan:
+      triggers: utter_greet
+      use_entities: true
+  - kondisi_tidak_baik:
+      triggers: utter_help
+      use_entities: true
+  - gejala:
+      triggers: action_handle_symptom
+      use_entities: true
+  - penolakan:
+      triggers: utter_alternative
+      use_entities: true
+  - penegasan:
+      triggers: ask_done
+      use_entities: true
+  - semua:
+      use_entities: true
+  - pengakhiran:
+      triggers: action_diagnosis
+      use_entities: true
+  - kondisi_baik:
+      triggers: utter_happy
+      use_entities: true
+  - tantangan_bot:
+      triggers: utter_iamabot
+      use_entities: true
+#  - tanya_umur:
+#      triggers: utter_umur
+#      use_entities: true
+#  - tanya_berat:
+#      - triggers: utter_berat
+#      - use_entities: true
+  - penutupan:
+      triggers: utter_happy
+      use_entities: true
+entities: [ ]
+slots:
+  symptom_list:
+    type: rasa.shared.core.slots.ListSlot
+    initial_value: null
+    auto_fill: true
+    influence_conversation: true
+  umur:
+    type: unfeaturized
+  berat:
+    type: unfeaturized
+responses:
+  ask_done:
+    - text: Oke
+  ask_new:
+    - text: Beritahu gejala yang anda rasakan
+  utter_help:
+    - text: gejala apa yang anda rasakan?
+  utter_umur:
+    - text: Berapa umur anda saat ini?
+  utter_berat:
+    - text: Berapa berat badan anda saat ini?
+  utter_soluti  on:
+    - image: https://cdn.dribbble.com/users/1044993/screenshots/6403343/carebot-dribbble.png
+      text: 'Anda di diagnosis: batuk. Obat yang disarankan: Dextromethorphan HBR'
+  utter_greet:
+    - text: Halo, bagaimana kabar anda saat ini?
+  utter_cheer_up:
+    - image: https://i.imgur.com/nGF1K8f.jpg
+      text: 'Mungkin ini menghibur anda:'
+  utter_did_that_help:
+    - text: Apakah itu bisa membantu anda?
+  utter_alternative:
+    - text: Gejala apa juga yang anda rasakan selain itu?
+  utter_happy:
+    - text: Baik, semoga anda sehat selalu!
+  utter_goodbye:
+    - text: Sampai bertemu kembali di lain waktu
+  utter_iamabot:
+    - text: Saya adalah bot AI yang dibuat oleh CES dengan NLU RASA AI.
+  utter_sorry:
+    - text: Maaf saya tidak dapat membantu anda.
+  utter_ask:
+    - text: Apakah kamu punya gejala ini?. iya atau tidak
+
+actions:
+  - utter_greet
+  - utter_umur
+  - utter_berat
+  - utter_cheer_up
+  - utter_did_that_help
+  - utter_happy
+  - utter_goodbye
+  - utter_iamabot
+  - utter_help
+  - utter_sorry
+  - utter_ask
+  - utter_solution
+  - ask_done
+  - ask_new
+  - action_handle_symptom
+  - utter_alternative
+  - action_diagnosis
+forms: { }
+e2e_actions: [ ]
