@@ -14,17 +14,17 @@
 - or if you using PyCharm, open python interpreter in setting => add(+) and install the rasa packages
 
 # 3. For Testing using ngrok local server
-- open your Editor for run RASA NLU.
+- *open your Editor for run RASA NLU.
 - running your rasa custom actions. 
-- $rasa run actions 
+- a. $rasa run actions 
 - enable your rasa api model. 
-- $rasa run -m models --enable-api --cors “*” --debug
+- b. $rasa run -m models --enable-api --cors “*” --debug
 
-- finally test your assistant in your Flutter Mobile.
+- *finally test your assistant in your Flutter Mobile.
 - open ngrok. path/to/ngrok/folder in your terminal
 - run ngrok. 
-- $./ngrok http 1234 <= (change 1234 with your port number)
-- Open the Flutter project
+- $./ngrok http 1234 <= (change 1234 with the port number used when you activate the api model before. (Command at step b). Look in the your terminal editor)
+- *Open the Flutter project
 - copy the ngrok url in your terminal. And put in Flutter Project => lib/pages/ChatPage.dart. for example (http://4d5b6c6f28be.ngrok.io/webhooks/rest/webhook)
   (/webhooks/rest/webhook) is parameter from rasa for testing rest api your rasa model.
 - Dont forget activate connections and recording permissions in your phone
@@ -34,6 +34,6 @@
 - https://rasa.com/docs/
 # Ngrok Documentation
 - https://ngrok.com/docs
-# F;lutter Documentation
+# Flutter Documentation
 - https://flutter.dev/docs
   
