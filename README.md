@@ -30,6 +30,9 @@
 - Dont forget activate connections and recording permissions in your phone
 - And this project I just try in Mobile Android, Not yet on iOS
 
+# Client Side
+https://github.com/kardihaekal/Client-AI-Medical-Diagnosis
+
 # Rasa Documentation
 - https://rasa.com/docs/
 # Ngrok Documentation
